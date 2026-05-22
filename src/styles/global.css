@@ -478,6 +478,19 @@ p {
 	max-width: 850px;
 }
 
+.gkc-hero-logo {
+	display: block;
+	width: min(280px, 72vw);
+	height: auto;
+	margin-bottom: 1.5rem;
+}
+
+.gkc-page .site-footer img {
+	width: auto;
+	height: 46px;
+	max-width: min(220px, 48vw);
+}
+
 .site-footer {
 	display: grid;
 	grid-template-columns: minmax(0, 1fr) auto;

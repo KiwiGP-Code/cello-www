@@ -5,12 +5,16 @@ interface Props {
 	title?: string;
 	description?: string;
 	bodyClass?: string;
+	brandLogo?: string;
+	brandAlt?: string;
 }
 
 const {
 	title = 'Cello | Business-only networks and digital resilience',
 	description = 'Cello brings together accountable business connectivity, service visibility and practical digital resilience for organisations that depend on reliable networks.',
 	bodyClass = '',
+	brandLogo = '/cello-logo.svg',
+	brandAlt = 'Cello',
 } = Astro.props;
 
 const navItems = [
@@ -29,7 +33,8 @@ const navItems = [
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="32x32" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
 		<title>{title}</title>
 	</head>
 	<body class={bodyClass}>
@@ -50,7 +55,7 @@ const navItems = [
 
 		<footer class="site-footer">
 			<div>
-				<img src="/cello-logo.svg" alt="Cello" width="118" height="38" />
+				<img src={brandLogo} alt={brandAlt} width="118" height="38" />
 				<p>Business-only networks with the visibility, security and assurance modern organisations need.</p>
 			</div>
 			<div class="footer-links">

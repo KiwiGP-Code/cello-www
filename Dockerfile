@@ -10,6 +10,7 @@ WORKDIR /app
 ENV NODE_ENV=production
 ENV PORT=8080
 COPY --from=build /app/dist ./dist
+COPY --from=build /app/public ./public
 COPY --from=build /app/server.mjs ./server.mjs
 EXPOSE 8080
 CMD ["node", "server.mjs"]

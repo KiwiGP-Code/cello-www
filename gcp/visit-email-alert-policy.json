@@ -1,0 +1,33 @@
+{
+  "displayName": "Cello preview — authenticated visit",
+  "documentation": {
+    "content": "Someone entered the correct preview password on the Cello board demo (Cloud Run `cello-www`).\n\nView all authenticated activity in Logs Explorer with filter `textPayload=~\"AUTH_VISIT\"`.",
+    "mimeType": "text/markdown"
+  },
+  "combiner": "OR",
+  "enabled": true,
+  "notificationChannels": [
+    "projects/cello-www/notificationChannels/4862421394506452600"
+  ],
+  "alertStrategy": {
+    "notificationRateLimit": {
+      "period": "3600s"
+    },
+    "autoClose": "86400s"
+  },
+  "conditions": [
+    {
+      "displayName": "Successful preview login",
+      "conditionMatchedLog": {
+        "filter": "resource.type=\"cloud_run_revision\"\nresource.labels.service_name=\"cello-www\"\ntextPayload=~\"AUTH_VISIT\"\ntextPayload=~\"login_success\"",
+        "labelExtractors": {
+          "Location": "REGEXP_EXTRACT(textPayload, \"\\\"location\\\":\\\"([^\\\"]+)\\\"\")",
+          "City": "REGEXP_EXTRACT(textPayload, \"\\\"city\\\":\\\"([^\\\"]+)\\\"\")",
+          "Country": "REGEXP_EXTRACT(textPayload, \"\\\"country\\\":\\\"([^\\\"]+)\\\"\")",
+          "IP": "REGEXP_EXTRACT(textPayload, \"\\\"ip\\\":\\\"([^\\\"]+)\\\"\")",
+          "Time": "REGEXP_EXTRACT(textPayload, \"\\\"time\\\":\\\"([^\\\"]+)\\\"\")"
+        }
+      }
+    }
+  ]
+}
