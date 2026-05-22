@@ -23,6 +23,6 @@ npm start
 
 ## Publishing Note
 
-`npm run dev` does not use a password. `npm start` serves the built `dist/` site with the preview password from `SITE_PASSWORD`, defaulting to `GKCelllo`.
+`npm run dev` does not use a password. `npm start` serves the built `dist/` site with the preview password from `SITE_PASSWORD`, defaulting to `GKCello`.
 
 The Google Cloud Run deployment uses the same password-protected server.

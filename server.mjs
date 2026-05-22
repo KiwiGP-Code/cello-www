@@ -7,7 +7,7 @@ import http from 'node:http';
 
 const root = fileURLToPath(new URL('./dist', import.meta.url));
 const port = Number(process.env.PORT || 8080);
-const sitePassword = process.env.SITE_PASSWORD || 'GKCelllo';
+const sitePassword = process.env.SITE_PASSWORD || 'GKCello';
 const cookieName = 'cello_site_auth';
 const cookieValue = createHash('sha256').update(sitePassword).digest('hex');
 
