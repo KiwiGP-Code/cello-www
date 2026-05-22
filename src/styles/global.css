@@ -342,6 +342,11 @@ p {
 	color: rgba(20, 2, 48, 0.72);
 }
 
+.tile h2 a {
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
 .copy {
 	display: grid;
 	gap: 1rem;
