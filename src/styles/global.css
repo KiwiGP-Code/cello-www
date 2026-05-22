@@ -352,12 +352,12 @@ p {
 	line-height: 0.95;
 }
 
-.contact-value-email {
+.contact-value-compact {
 	font-size: clamp(1.7rem, 3vw, 3rem);
 	max-width: none;
 }
 
-.contact-value-email a {
+.contact-value-compact a {
 	display: inline-block;
 	hyphens: none;
 	line-height: 0.98;
@@ -571,7 +571,7 @@ p {
 		width: 100%;
 	}
 
-	.contact-value-email {
+	.contact-value-compact {
 		font-size: clamp(1.35rem, 6.5vw, 1.7rem);
 	}
 }
