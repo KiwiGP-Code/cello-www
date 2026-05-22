@@ -353,14 +353,15 @@ p {
 }
 
 .contact-value-email {
-	font-size: clamp(2rem, 4.2vw, 3.9rem);
-	max-width: 9.5ch;
+	font-size: clamp(1.7rem, 3vw, 3rem);
+	max-width: none;
 }
 
 .contact-value-email a {
 	display: inline-block;
 	hyphens: none;
 	line-height: 0.98;
+	white-space: nowrap;
 }
 
 .copy {
@@ -568,5 +569,9 @@ p {
 
 	.button {
 		width: 100%;
+	}
+
+	.contact-value-email {
+		font-size: clamp(1.35rem, 6.5vw, 1.7rem);
 	}
 }
