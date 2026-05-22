@@ -347,6 +347,22 @@ p {
 	word-break: break-word;
 }
 
+.contact-value {
+	font-size: clamp(2.4rem, 5vw, 5rem);
+	line-height: 0.95;
+}
+
+.contact-value-email {
+	font-size: clamp(2rem, 4.2vw, 3.9rem);
+	max-width: 9.5ch;
+}
+
+.contact-value-email a {
+	display: inline-block;
+	hyphens: none;
+	line-height: 0.98;
+}
+
 .copy {
 	display: grid;
 	gap: 1rem;
