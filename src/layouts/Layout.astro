@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+	bodyClass?: string;
+}
+
+const {
+	title = 'Cello | Business-only networks and digital resilience',
+	description = 'Cello brings together accountable business connectivity, service visibility and practical digital resilience for organisations that depend on reliable networks.',
+	bodyClass = '',
+} = Astro.props;
+
+const navItems = [
+	{ label: 'Solutions', href: '/solutions/smartwan' },
+	{ label: 'Digital resilience', href: '/digital-resilience' },
+	{ label: 'Industries', href: '/#industries' },
+	{ label: 'Insights', href: '/#proof' },
+	{ label: 'Contact', href: '/contact' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body class={bodyClass}>
+		<a class="skip-link" href="#main">Skip to main content</a>
+		<header class="site-header" aria-label="Primary">
+			<a class="brand" href="/" aria-label="Cello home">
+				<img src="/cello-logo.svg" alt="Cello" width="146" height="46" />
+			</a>
+			<nav class="site-nav" aria-label="Main navigation">
+				{navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+			</nav>
+			<a class="header-phone" href="tel:0800225662">0800 225 662</a>
+		</header>
+
+		<main id="main">
+			<slot />
+		</main>
+
+		<footer class="site-footer">
+			<div>
+				<img src="/cello-logo.svg" alt="Cello" width="118" height="38" />
+				<p>Business-only networks with the visibility, security and assurance modern organisations need.</p>
+			</div>
+			<div class="footer-links">
+				<a href="/solutions/smartwan">Solutions</a>
+				<a href="/digital-resilience">Digital resilience</a>
+				<a href="/contact">Contact</a>
+				<a href="tel:0800225662">0800 225 662</a>
+			</div>
+		</footer>
+	</body>
+</html>
