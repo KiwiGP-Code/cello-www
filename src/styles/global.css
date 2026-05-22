@@ -348,6 +348,7 @@ p {
 }
 
 .contact-value {
+	margin-bottom: 0.85rem;
 	font-size: clamp(2.4rem, 5vw, 5rem);
 	line-height: 0.95;
 }
